@@ -1,0 +1,17 @@
+remove_existing: True 
+sequential_data : False
+pickle_path : "C:\\Projects\\seq2bbox\\data\\pickle\\ENA\\train100.pk"
+dataset_path : "C:\\temp\\ENA_full\\"
+image_path : "C:\\temp\\data_final\\ENA\\images\\ENA64xCropGNTrain100\\"
+histlbp_path : "C:\\temp\\data_final\\ENA\\histlbp\\ENA64xCropGNTrain100\\"
+label_path : "C:\\temp\\data_final\\ENA\\labels\\ENA64xCropGNTrain100\\"
+generate_histlp : False 
+generate_labels : True
+convert_grayscale : True
+wavelet_compress : False
+naive_compress : True 
+resize : True 
+image_size : 64 
+# multiprocessing
+chunksize : 8
+max_workers : 8

@@ -1,0 +1,12 @@
+image_path : "/home/serlierj/datasets/islands/images/ISL224xSeqRGBTrain5/"
+label_path : "/home/serlierj/datasets/islands/labels/ISL224xSeqRGBTrain5/"
+histlbp_path : "/home/serlierj/datasets/islands/histlbp/ISL224xSeqRGBTrain5/"
+val_image_path : "/home/serlierj/datasets/islands/images/ISL224xSeqRGBTest20/"
+val_label_path : "/home/serlierj/datasets/islands/labels/ISL224xSeqRGBTest20/"
+val_histlbp_path : "/home/serlierj/datasets/islands/histlbp/ISL224xSeqRGBTest20/"
+image_size : 224
+nclass : 6
+max_epochs : 10
+enable_histlbp : True
+ex_name: "ghostnet_histlbp_seq"
+ptpath: "/home/serlierj/batchscripts/ghostnet_experiment_run_seq_histlbp/ghostnet_histlbp_seq_final_model.pt"

@@ -1,0 +1,14 @@
+image_path1 : "/home/serlierj/datasets/islands/images/ISL224xSeqRGBTrain5/"
+val_image_path1 : "/home/serlierj/datasets/islands/images/ISL224xSeqRGBTest20/"
+image_path2 : "/home/serlierj/datasets/islands/images/ISL224xSeqRGBTrain5/"
+label_path : "/home/serlierj/datasets/islands/labels/ISL224xSeqRGBTrain5/"
+histlbp_path : "/home/serlierj/datasets/islands/histlbp/ISL224xSeqRGBTrain5/"
+val_image_path2 : "/home/serlierj/datasets/islands/images/ISL224xSeqRGBTest20/"
+val_label_path : "/home/serlierj/datasets/islands/labels/ISL224xSeqRGBTest20/"
+val_histlbp_path : "/home/serlierj/datasets/islands/histlbp/ISL224xSeqRGBTest20/"
+image_size : 224
+nclass : 6
+max_epochs : 10
+enable_histlbp : False
+ex_name: "dual_ghostnet"
+ptpath: "/home/serlierj/batchscripts/dual_ghostnet_experiment/dual_ghostnet_final_model.pt"
