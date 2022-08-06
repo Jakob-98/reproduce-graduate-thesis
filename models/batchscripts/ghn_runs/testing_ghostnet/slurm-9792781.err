@@ -1,0 +1,86 @@
+wandb: Currently logged in as: jakobs. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.12.21
+wandb: Run data is saved locally in /home/serlierj/batchscripts/testing_ghostnet/wandb/run-20220726_182417-22r6rv9e
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run unique-wave-2
+wandb: ⭐️ View project at https://wandb.ai/jakobs/uncategorized
+wandb: 🚀 View run at https://wandb.ai/jakobs/uncategorized/runs/22r6rv9e
+/home/serlierj/envs/wild/lib/python3.7/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Multiprocessing is handled by SLURM.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name          | Type             | Params
+---------------------------------------------------
+0 | model         | GhostNet         | 4.0 M 
+1 | loss          | CrossEntropyLoss | 0     
+2 | val_confusion | ConfusionMatrix  | 0     
+3 | train_acc     | Accuracy         | 0     
+4 | train_f1      | F1Score          | 0     
+5 | train_auroc   | AUROC            | 0     
+6 | val_acc       | Accuracy         | 0     
+7 | val_f1        | F1Score          | 0     
+8 | val_auroc     | AUROC            | 0     
+---------------------------------------------------
+4.0 M     Trainable params
+0         Non-trainable params
+4.0 M     Total params
+16.186    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:245: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  category=PossibleUserWarning,
+/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/functional.py:478: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2895.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: \ 0.003 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: | 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: / 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: - 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: \ 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: | 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: / 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb: - 0.008 MB of 0.008 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced unique-wave-2: https://wandb.ai/jakobs/uncategorized/runs/22r6rv9e
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220726_182417-22r6rv9e/logs
+Traceback (most recent call last):
+  File "/home/serlierj/projects/modelpipeline/main.py", line 66, in <module>
+    trainer.fit(ex, train_dataloaders=datamodule)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 771, in fit
+    self._fit_impl, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 723, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 811, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1236, in _run
+    results = self._run_stage()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1323, in _run_stage
+    return self._run_train()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1345, in _run_train
+    self._run_sanity_check()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1413, in _run_sanity_check
+    val_loop.run()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 204, in run
+    self.advance(*args, **kwargs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 154, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 204, in run
+    self.advance(*args, **kwargs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 112, in advance
+    batch = next(data_fetcher)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 184, in __next__
+    return self.fetching_function()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 259, in fetching_function
+    self._fetch_next_batch(self.dataloader_iter)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/utilities/fetching.py", line 273, in _fetch_next_batch
+    batch = next(iterator)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 652, in __next__
+    data = self._next_data()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 692, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    return self.collate_fn(data)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py", line 175, in default_collate
+    return [default_collate(samples) for samples in transposed]  # Backwards compatibility.
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py", line 175, in <listcomp>
+    return [default_collate(samples) for samples in transposed]  # Backwards compatibility.
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/utils/data/_utils/collate.py", line 141, in default_collate
+    return torch.stack(batch, 0, out=out)
+RuntimeError: stack expects each tensor to be equal size, but got [3, 1080, 1920] at entry 0 and [3, 224, 224] at entry 1

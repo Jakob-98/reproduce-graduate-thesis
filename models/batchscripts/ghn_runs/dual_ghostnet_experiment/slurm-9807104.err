@@ -1,0 +1,78 @@
+wandb: Currently logged in as: jakobs. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.12.21
+wandb: Run data is saved locally in /home/serlierj/batchscripts/dual_ghostnet_experiment/wandb/run-20220728_170906-2u6t5n4c
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run quiet-bush-21
+wandb: ⭐️ View project at https://wandb.ai/jakobs/uncategorized
+wandb: 🚀 View run at https://wandb.ai/jakobs/uncategorized/runs/2u6t5n4c
+/home/serlierj/envs/wild/lib/python3.7/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Multiprocessing is handled by SLURM.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name          | Type             | Params
+---------------------------------------------------
+0 | model         | DualGhostNet     | 7.8 M 
+1 | loss          | CrossEntropyLoss | 0     
+2 | val_confusion | ConfusionMatrix  | 0     
+3 | train_acc     | Accuracy         | 0     
+4 | train_f1      | F1Score          | 0     
+5 | train_auroc   | AUROC            | 0     
+6 | val_acc       | Accuracy         | 0     
+7 | val_f1        | F1Score          | 0     
+8 | val_auroc     | AUROC            | 0     
+---------------------------------------------------
+7.8 M     Trainable params
+0         Non-trainable params
+7.8 M     Total params
+31.274    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:245: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  category=PossibleUserWarning,
+/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/functional.py:478: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2895.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: | 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: / 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: - 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: \ 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: | 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: / 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: - 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced quiet-bush-21: https://wandb.ai/jakobs/uncategorized/runs/2u6t5n4c
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220728_170906-2u6t5n4c/logs
+Traceback (most recent call last):
+  File "/home/serlierj/projects/modelpipeline/dual_main.py", line 73, in <module>
+    trainer.fit(ex, train_dataloaders=datamodule)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 771, in fit
+    self._fit_impl, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 723, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 811, in _fit_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1236, in _run
+    results = self._run_stage()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1323, in _run_stage
+    return self._run_train()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1345, in _run_train
+    self._run_sanity_check()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1413, in _run_sanity_check
+    val_loop.run()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/base.py", line 211, in run
+    output = self.on_run_end()
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 188, in on_run_end
+    self._evaluation_epoch_end(self._outputs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 315, in _evaluation_epoch_end
+    self.trainer._call_lightning_module_hook("validation_epoch_end", output_or_outputs)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1595, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/home/serlierj/projects/modelpipeline/experiment.py", line 99, in validation_epoch_end
+    self.model.save_model(str(len(outputs)))
+  File "/home/serlierj/projects/modelpipeline/dual_ghostnet.py", line 282, in save_model
+    torch.save(self.state_dict(), './checkpoints/ghostnet_' + str(step) + '.pt')
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/serialization.py", line 376, in save
+    with _open_file_like(f, 'wb') as opened_file:
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints/ghostnet_2.pt'

@@ -8,7 +8,7 @@ Setting up the datasets and experiments is quite a hassle- I will keep my datase
 ## Preparation: Downloading datasets 
 1. Download the ENA dataset and channel islands datasets from https://lila.science/datasets/channel-islands-camera-traps/ and https://lila.science/datasets/ena24detection. I suggest using `azcopy` as the datasets are quite large (89GB total). Take note of the paths to the images as well as the paths to the metadata (json) files. 
 2. Install the dependencies in requirements.txt - this will take a while. 
-3. Run the dataprep python files found in datasetprep/datasethandler/*.py to generate the pickle files for the data subsets. The dataprep files contain some general EDA used for the thesis report. Be sure to edit the `class config` classes for both of the files manually - and set the save_pickles flag to `True`. 
+3. Optional generate pickles, or use the ones in `generating_subsets\pickle` - To generate: run the dataprep python files found in datasetprep/datasethandler/*.py to generate the pickle files for the data subsets. The dataprep files contain some general EDA used for the thesis report. Be sure to edit the `class config` classes for both of the files manually - and set the save_pickles flag to `True`. 
 4. Save the generated pickle files somewhere- these are used for generating the various subsets
 
 
@@ -40,6 +40,21 @@ Generate a config, run the datapileine with `path_to_py3_executable generating_s
 Be careful with `remove_existing` - this removes all files from the paths submitted. 
 
 ## Running models and testing
+### Yolo
+YoloV5 is quite simple: clone ![Yolov5](https://github.com/ultralytics/yolov5), and run it with the proper datasets, yaml files, and flags. Make sure CUDA is enabled (you can check with `python3` followed by `import torch; print(torch.cuda.is_available())`)
+
+For reproducibility's sake, use a YoloV5 version around ![this](https://github.com/ultralytics/yolov5/pull/8888) PR of the repo. 
+
+For instance: 
+```bash
+python path/to/yolov5/train.py --batch-size 16 --img 640 \
+--epochs 100 --data ENA640xCropRGBTrain100.yaml --name Y5lENA640xCropRGBTrain100 \
+--weights yolov5l.pt --device 0
+```
+
+In this case, make sure to include the `ENA640xCropRGBTrain100.yaml` file in the yolov5\data folder. In `models\yolo\yamls` the yaml files used in the experiments are added. 
+
+
 ### VAE
 The VAE was modified from: https://github.com/AntixK/PyTorch-VAE/blob/master/models/vanilla_vae.py
 For the VAE, you only need to update the `config` class to match your file locations and run the models. Each epoch, a checkpoint of the model is saved as a `.pt` file. 

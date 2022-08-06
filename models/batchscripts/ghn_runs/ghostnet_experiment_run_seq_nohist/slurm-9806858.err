@@ -1,0 +1,44 @@
+wandb: Currently logged in as: jakobs. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.12.21
+wandb: Run data is saved locally in /home/serlierj/batchscripts/ghostnet_experiment_run_seq_nohist/wandb/run-20220728_142617-27limymh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run deep-oath-13
+wandb: ⭐️ View project at https://wandb.ai/jakobs/uncategorized
+wandb: 🚀 View run at https://wandb.ai/jakobs/uncategorized/runs/27limymh
+/home/serlierj/envs/wild/lib/python3.7/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+Multiprocessing is handled by SLURM.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name          | Type             | Params
+---------------------------------------------------
+0 | model         | GhostNet         | 3.9 M 
+1 | loss          | CrossEntropyLoss | 0     
+2 | val_confusion | ConfusionMatrix  | 0     
+3 | train_acc     | Accuracy         | 0     
+4 | train_f1      | F1Score          | 0     
+5 | train_auroc   | AUROC            | 0     
+6 | val_acc       | Accuracy         | 0     
+7 | val_f1        | F1Score          | 0     
+8 | val_auroc     | AUROC            | 0     
+---------------------------------------------------
+3.9 M     Trainable params
+0         Non-trainable params
+3.9 M     Total params
+15.637    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/utilities/data.py:128: UserWarning: Total length of `DataLoader` across ranks is zero. Please make sure this was your intention.
+  f"Total length of `{dataloader.__class__.__name__}` across ranks is zero."
+/home/serlierj/envs/wild/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:245: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  category=PossibleUserWarning,
+/home/serlierj/envs/wild/lib/python3.7/site-packages/torch/functional.py:478: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2895.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: \ 0.004 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: | 0.004 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: / 0.004 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: - 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: \ 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: | 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: / 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: - 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: \ 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb: | 0.007 MB of 0.007 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced deep-oath-13: https://wandb.ai/jakobs/uncategorized/runs/27limymh
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220728_142617-27limymh/logs

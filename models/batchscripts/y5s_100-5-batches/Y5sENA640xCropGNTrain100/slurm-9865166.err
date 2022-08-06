@@ -1,0 +1,38 @@
+wandb: Currently logged in as: jakobs. Use `wandb login --relogin` to force relogin
+[34m[1mtrain: [0mweights=yolov5s.pt, cfg=, data=ENA640xCropGNTrain100.yaml, hyp=../../../projects/yolov5/data/hyps/hyp.scratch-low.yaml, epochs=100, batch_size=16, imgsz=640, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=0, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=8, project=../../../projects/yolov5/runs/train, name=Y5sENA640xCropGNTrain100, exist_ok=False, quad=False, cos_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, seed=0, local_rank=-1, entity=None, upload_dataset=False, bbox_interval=-1, artifact_alias=latest
+[34m[1mgithub: [0m⚠️ YOLOv5 is out of date by 67 commits. Use `git pull` or `git clone https://github.com/ultralytics/yolov5` to update.
+YOLOv5 🚀 v6.1-306-gfbe67e4 Python-3.7.3 torch-1.12.0+cu102 CUDA:0 (NVIDIA GeForce GTX 1080 Ti, 11178MiB)
+
+[34m[1mhyperparameters: [0mlr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir ../../../projects/yolov5/runs/train', view at http://localhost:6006/
+wandb: wandb version 0.13.1 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.21
+wandb: Run data is saved locally in /home/serlierj/batchscripts/y5s_100-5-batches/Y5sENA640xCropGNTrain100/wandb/run-20220806_205632-vuhf9l5r
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Y5sENA640xCropGNTrain100
+wandb: ⭐️ View project at https://wandb.ai/jakobs/train
+wandb: 🚀 View run at https://wandb.ai/jakobs/train/runs/vuhf9l5r
+
+Dataset not found ⚠, missing paths ['/home/serlierj/datasets/ENA/images/ENA640xCropGNVal']
+Traceback (most recent call last):
+  File "/home/serlierj/projects/yolov5/train.py", line 642, in <module>
+    main(opt)
+  File "/home/serlierj/projects/yolov5/train.py", line 537, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "/home/serlierj/projects/yolov5/train.py", line 91, in train
+    loggers = Loggers(save_dir, weights, opt, hyp, LOGGER)  # loggers instance
+  File "/home/serlierj/projects/yolov5/utils/loggers/__init__.py", line 82, in __init__
+    self.wandb = WandbLogger(self.opt, run_id)
+  File "/home/serlierj/projects/yolov5/utils/loggers/wandb/wandb_utils.py", line 180, in __init__
+    self.data_dict = check_wandb_dataset(opt.data)
+  File "/home/serlierj/projects/yolov5/utils/loggers/wandb/wandb_utils.py", line 56, in check_wandb_dataset
+    return check_dataset(data_file)
+  File "/home/serlierj/projects/yolov5/utils/general.py", line 495, in check_dataset
+    raise Exception(emojis('Dataset not found ❌'))
+Exception: Dataset not found ❌
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: - 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: \ 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: | 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: / 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: - 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: \ 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb: | 0.004 MB of 0.004 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced Y5sENA640xCropGNTrain100: https://wandb.ai/jakobs/train/runs/vuhf9l5r
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220806_205632-vuhf9l5r/logs

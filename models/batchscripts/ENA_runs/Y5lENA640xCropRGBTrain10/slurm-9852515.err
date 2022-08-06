@@ -1,0 +1,95 @@
+wandb: Currently logged in as: jakobs. Use `wandb login --relogin` to force relogin
+[34m[1mtrain: [0mweights=yolov5l.pt, cfg=, data=ENA640xCropRGBTrain10.yaml, hyp=../../../projects/yolov5/data/hyps/hyp.scratch-low.yaml, epochs=100, batch_size=16, imgsz=640, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=0, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=8, project=../../../projects/yolov5/runs/train, name=Y5lENA640xCropRGBTrain10, exist_ok=False, quad=False, cos_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, seed=0, local_rank=-1, entity=None, upload_dataset=False, bbox_interval=-1, artifact_alias=latest
+[34m[1mgithub: [0m⚠️ YOLOv5 is out of date by 54 commits. Use `git pull` or `git clone https://github.com/ultralytics/yolov5` to update.
+YOLOv5 🚀 v6.1-306-gfbe67e4 Python-3.7.3 torch-1.12.0+cu102 CUDA:0 (NVIDIA GeForce GTX 1080 Ti, 11178MiB)
+
+[34m[1mhyperparameters: [0mlr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir ../../../projects/yolov5/runs/train', view at http://localhost:6006/
+wandb: wandb version 0.13.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.21
+wandb: Run data is saved locally in /home/serlierj/batchscripts/ENA_runs/Y5lENA640xCropRGBTrain10/wandb/run-20220804_193252-2s5h5cj4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Y5lENA640xCropRGBTrain10
+wandb: ⭐️ View project at https://wandb.ai/jakobs/train
+wandb: 🚀 View run at https://wandb.ai/jakobs/train/runs/2s5h5cj4
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+Downloading https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5l.pt to yolov5l.pt...
+  0% 0.00/89.3M [00:00<?, ?B/s] 24% 21.0M/89.3M [00:00<00:00, 220MB/s] 47% 42.0M/89.3M [00:00<00:00, 196MB/s] 68% 60.9M/89.3M [00:00<00:00, 189MB/s] 88% 79.0M/89.3M [00:00<00:00, 188MB/s]100% 89.3M/89.3M [00:00<00:00, 195MB/s]
+
+Overriding model.yaml nc=80 with nc=22
+
+                 from  n    params  module                                  arguments                     
+  0                -1  1      7040  models.common.Conv                      [3, 64, 6, 2, 2]              
+  1                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]               
+  2                -1  3    156928  models.common.C3                        [128, 128, 3]                 
+  3                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]              
+  4                -1  6   1118208  models.common.C3                        [256, 256, 6]                 
+  5                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]              
+  6                -1  9   6433792  models.common.C3                        [512, 512, 9]                 
+  7                -1  1   4720640  models.common.Conv                      [512, 1024, 3, 2]             
+  8                -1  3   9971712  models.common.C3                        [1024, 1024, 3]               
+  9                -1  1   2624512  models.common.SPPF                      [1024, 1024, 5]               
+ 10                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]             
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]                           
+ 13                -1  3   2757632  models.common.C3                        [1024, 512, 3, False]         
+ 14                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]              
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]                           
+ 17                -1  3    690688  models.common.C3                        [512, 256, 3, False]          
+ 18                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]              
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]                           
+ 20                -1  3   2495488  models.common.C3                        [512, 512, 3, False]          
+ 21                -1  1   2360320  models.common.Conv                      [512, 512, 3, 2]              
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]                           
+ 23                -1  3   9971712  models.common.C3                        [1024, 1024, 3, False]        
+ 24      [17, 20, 23]  1    145395  models.yolo.Detect                      [22, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [256, 512, 1024]]
+Model summary: 468 layers, 46251379 parameters, 46251379 gradients, 108.6 GFLOPs
+
+Transferred 607/613 items from yolov5l.pt
+[34m[1mAMP: [0mchecks passed ✅
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[0m SGD with parameter groups 101 weight (no decay), 104 weight, 104 bias
+[34m[1mtrain: [0mScanning '/home/serlierj/datasets/ENA/labels/ENA640xCropRGBTrain10' images and labels...:   0% 0/615 [00:00<?, ?it/s][34m[1mtrain: [0mScanning '/home/serlierj/datasets/ENA/labels/ENA640xCropRGBTrain10' images and labels...148 found, 0 missing, 0 empty, 0 corrupt:  24% 148/615 [00:00<00:00, 1478.84it/s][34m[1mtrain: [0mScanning '/home/serlierj/datasets/ENA/labels/ENA640xCropRGBTrain10' images and labels...296 found, 0 missing, 0 empty, 0 corrupt:  48% 296/615 [00:00<00:00, 1397.27it/s][34m[1mtrain: [0mScanning '/home/serlierj/datasets/ENA/labels/ENA640xCropRGBTrain10' images and labels...471 found, 0 missing, 0 empty, 0 corrupt:  77% 471/615 [00:00<00:00, 1545.31it/s][34m[1mtrain: [0mScanning '/home/serlierj/datasets/ENA/labels/ENA640xCropRGBTrain10' images and labels...615 found, 0 missing, 0 empty, 0 corrupt: 100% 615/615 [00:00<00:00, 1560.13it/s]
+[34m[1mtrain: [0mNew cache created: /home/serlierj/datasets/ENA/labels/ENA640xCropRGBTrain10.cache
+/home/serlierj/envs/yolo/lib/python3.7/site-packages/torch/utils/data/dataloader.py:560: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+Traceback (most recent call last):
+  File "/home/serlierj/projects/yolov5/utils/dataloaders.py", line 453, in __init__
+    cache, exists = np.load(cache_path, allow_pickle=True).item(), True  # load dict
+  File "/home/serlierj/envs/yolo/lib/python3.7/site-packages/numpy/lib/npyio.py", line 417, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/serlierj/datasets/ENA/labels/ENA640xCropRGBVal.cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/serlierj/projects/yolov5/train.py", line 642, in <module>
+    main(opt)
+  File "/home/serlierj/projects/yolov5/train.py", line 537, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "/home/serlierj/projects/yolov5/train.py", line 231, in train
+    prefix=colorstr('val: '))[0]
+  File "/home/serlierj/projects/yolov5/utils/dataloaders.py", line 126, in create_dataloader
+    prefix=prefix)
+  File "/home/serlierj/projects/yolov5/utils/dataloaders.py", line 457, in __init__
+    cache, exists = self.cache_labels(cache_path, prefix), False  # run cache ops
+  File "/home/serlierj/projects/yolov5/utils/dataloaders.py", line 543, in cache_labels
+    with Pool(NUM_THREADS) as pool:
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 176, in __init__
+    self._repopulate_pool()
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 241, in _repopulate_pool
+    w.start()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "/usr/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/usr/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/usr/lib/python3.7/multiprocessing/popen_fork.py", line 70, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: | 0.005 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: / 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: | 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: / 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: ERROR Problem finishing run

@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --gpus=1
+#SBATCH --partition=gpu_shared
+#SBATCH --time=06:00:00
+#SBATCH --output=slurm-%j.out
+#SBATCH --error=slurm-%j.err
+
+module load 2021
+module load CUDA/11.3.1
+source /home/serlierj/envs/yolo/bin/activate
+python /home/serlierj/testenv.py
+python /home/serlierj/projects/yolov5/train.py --batch-size 16 --img 64 --epochs 28 --data ISL64xSeqTrain5.yaml --name Y5sISL64xSeqTrain5 --weights yolov5s.pt --device 0
+echo "DONE!"
